@@ -1,3 +1,4 @@
+import { Order } from './../models/order';
 import { Component, OnInit,Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ShoppingcartDashboardComponent implements OnInit {
   public orders:Order[];
+  name:string;
+  selectedOrder:Order;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
     http.get<Order[]>(baseUrl + 'api/ShoppingCartDashboard/Orders').subscribe(result => {
@@ -18,11 +21,8 @@ export class ShoppingcartDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+  viewOrder(order:Order){
+    this.selectedOrder=order;
+  }
 
-interface Order{
-  orderId: number,
-  price: number,
-  createdDate: Date,
-  status: string
 }

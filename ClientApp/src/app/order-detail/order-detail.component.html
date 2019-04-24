@@ -1,0 +1,20 @@
+
+<table class="table" *ngIf="order">
+    <tr><td colspan="2" horizontal-align="center"><h2>Selected Order</h2></td></tr>
+    <tr>
+      <td>Order Id: </td>
+      <td>{{order.orderId}}</td>
+    </tr>
+    <tr>
+        <td>Price: </td>
+        <td>{{order.price}}</td>
+    </tr>
+    <tr>
+        <td>Created Date: </td>
+        <td>{{order.createdDate | date}}</td>
+    </tr>
+    <tr>
+        <td>Status: </td>
+        <td>{{order.status}}</td>
+    </tr>
+  </table>

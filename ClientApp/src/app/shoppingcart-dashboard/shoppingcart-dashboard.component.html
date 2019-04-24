@@ -1,7 +1,6 @@
 <h1>ShoppingCart Dashboard</h1>
 
 <p *ngIf="!orders"><em>Loading...</em></p>
-
 <table class='table table-striped' *ngIf="orders">
   <thead>
     <tr>
@@ -17,6 +16,8 @@
       <td>{{ order.price }}</td>
       <td>{{ order.createdDate | date}}</td>
       <td>{{ order.status }}</td>
+      <td (click)="viewOrder(order)">View</td>
     </tr>
   </tbody>
 </table>
+<app-order-detail [order]="selectedOrder"></app-order-detail>

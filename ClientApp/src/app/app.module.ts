@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ShoppingcartDashboardComponent } from './shoppingcart-dashboard/shoppingcart-dashboard.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShoppingcartDashboardComponent } from './shoppingcart-dashboard/shoppin
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ShoppingcartDashboardComponent
+    ShoppingcartDashboardComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
