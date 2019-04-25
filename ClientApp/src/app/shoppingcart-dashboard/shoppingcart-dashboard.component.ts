@@ -1,6 +1,6 @@
 import { Order } from './../models/order';
-import { Component, OnInit,Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-shoppingcart-dashboard',
@@ -12,8 +12,8 @@ export class ShoppingcartDashboardComponent implements OnInit {
   name:string;
   selectedOrder:Order;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
-    http.get<Order[]>(baseUrl + 'api/ShoppingCartDashboard/Orders').subscribe(result => {
+  constructor(orderService:OrderService) { 
+    orderService.getOrders().subscribe(result => {
       this.orders = result;
     }, error => console.error(error));
   }
