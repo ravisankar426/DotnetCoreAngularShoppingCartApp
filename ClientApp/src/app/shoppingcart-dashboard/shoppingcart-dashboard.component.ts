@@ -1,6 +1,4 @@
-import { Order } from './../models/order';
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-shoppingcart-dashboard',
@@ -8,21 +6,12 @@ import { OrderService } from '../order.service';
   styleUrls: ['./shoppingcart-dashboard.component.css']
 })
 export class ShoppingcartDashboardComponent implements OnInit {
-  public orders:Order[];
-  name:string;
-  selectedOrder:Order;
-
-  constructor(orderService:OrderService) { 
-    orderService.getOrders().subscribe(result => {
-      this.orders = result;
-    }, error => console.error(error));
+  
+  constructor() { 
+    
   }
 
   ngOnInit() {
-  }
-
-  viewOrder(order:Order){
-    this.selectedOrder=order;
   }
 
 }

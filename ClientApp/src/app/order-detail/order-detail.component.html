@@ -1,26 +1,33 @@
 
-  <div class="card-group col-md-8" *ngIf="order">
-      <div class="card">
-          <div class="card-header bg-primary text-white text-center">
-              Selected Order
-          </div>
-          <div class="card-body">
-            <div class="form-group form-group-bottom-grey">
-              <label for="" class="col-md-6">Order Id: </label>
-              <label class="col-md-6">{{order.orderId}}</label>
-            </div>            
-            <div class="form-group form-group-bottom-grey">
-                <label for="" class="col-md-6">Price: </label>
-                <label class="col-md-6">{{order.price}}</label>
+  <div class="container">
+  <div class="row">
+      <div class="card-group col-md-8" *ngIf="order">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                Selected Order
             </div>
-            <div class="form-group form-group-bottom-grey">
-                <label for="" class="col-md-6">Created Date: </label>
-                <label class="col-md-6">{{order.createdDate | date}}</label>
+            <div class="card-body">
+                <div class="form-group form-group-bottom-grey">
+                <label for="" class="col-md-6">Order Id: </label>
+                <label class="col-md-6">{{order.orderId}}</label>
+                </div>            
+                <div class="form-group form-group-bottom-grey">
+                    <label for="" class="col-md-6">Price: </label>
+                    <label class="col-md-6">{{order.price}}</label>
+                </div>
+                <div class="form-group form-group-bottom-grey">
+                    <label for="" class="col-md-6">Created Date: </label>
+                    <label class="col-md-6">{{order.createdDate | date}}</label>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-6">Status: </label>
+                    <label class="col-md-6">{{order.status}}</label>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="" class="col-md-6">Status: </label>
-                <label class="col-md-6">{{order.status}}</label>
-            </div>
-          </div>
-      </div>
+        </div>
+    </div>
+  </div>    
+    <div class="row">
+        <div class="btn btn-primary align-content-end" (click)="goBack()">Back</div>
+    </div>      
   </div>

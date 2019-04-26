@@ -12,10 +12,14 @@ export class OrderService {
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
     this.httpClient=http;
-    this.url=baseUrl + 'api/ShoppingCartDashboard/Orders';
+    this.url=baseUrl + 'api/ShoppingCartDashboard';
   }
 
   getOrders():Observable<Order[]>{
-    return this.httpClient.get<Order[]>(this.url);
+    return this.httpClient.get<Order[]>(this.url+'/Orders');
+  }
+
+  getOrder(id:number):Observable<Order>{
+    return this.httpClient.get<Order>(this.url+'/Order/'+id);
   }
 }

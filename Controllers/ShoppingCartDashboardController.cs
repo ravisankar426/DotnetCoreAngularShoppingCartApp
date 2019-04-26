@@ -22,6 +22,12 @@ namespace ShoppingCartApp.Controllers
                   new Order(){OrderId=5,Price=500,CreatedDate=DateTime.Now,Status="Placed"}
               };
           }
+
+          [HttpGet("[action]/{id}")]
+          public Order Order(int id)
+          {
+             return Orders().FirstOrDefault(x=>x.OrderId==id);
+          }
      }
 
     public class Order

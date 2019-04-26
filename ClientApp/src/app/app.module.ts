@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ShoppingcartDashboardComponent } from './shoppingcart-dashboard/shoppingcart-dashboard.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     CounterComponent,
     FetchDataComponent,
     ShoppingcartDashboardComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +32,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'shoppingcart-dashboard', component: ShoppingcartDashboardComponent },
+      { path: 'shoppingcart-dashboard', component: ShoppingcartDashboardComponent}, 
+      { path: 'order-detail/:id', component: OrderDetailComponent },  
     ])
   ],
   providers: [],

@@ -1,23 +1,6 @@
-<h1>ShoppingCart Dashboard</h1>
+<app-order-list></app-order-list>
 
-<p *ngIf="!orders"><em>Loading...</em></p>
-<table class='table table-striped' *ngIf="orders">
-  <thead>
-    <tr>
-      <th>Order Id</th>
-      <th>Price</th>
-      <th>Created Date</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of orders">
-      <td>{{ order.orderId }}</td>
-      <td>{{ order.price }}</td>
-      <td>{{ order.createdDate | date}}</td>
-      <td>{{ order.status }}</td>
-      <td (click)="viewOrder(order)">View</td>
-    </tr>
-  </tbody>
-</table>
-<app-order-detail [order]="selectedOrder"></app-order-detail>
+<div class="container">
+  <router-outlet name="order-detail"></router-outlet>
+</div>  
+<!--<app-order-detail [order]="selectedOrder"></app-order-detail>-->
